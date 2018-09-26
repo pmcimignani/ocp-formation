@@ -10,4 +10,10 @@ public class PMOrderService implements PurchaseOrderProcessService{
 		
 	}
 
+	@Override
+	public int getQuantity(OrderProduct orderProduct) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
