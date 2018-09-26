@@ -6,7 +6,16 @@ public class GainPurchaseOrderProcessService implements PurchaseOrderProcessServ
 
 	@Override
 	public void sendOrderToProcess(OrderProduct aspirineOrder) {
-		System.out.println("Call Gain to Order:" + aspirineOrder);
+		// TODO Auto-generated method stub
+		
 	}
+
+	@Override
+	public int getQuantity(OrderProduct orderProduct) {
+		// TODO Auto-generated method stub
+		return -1;
+	}
+
+	
 
 }

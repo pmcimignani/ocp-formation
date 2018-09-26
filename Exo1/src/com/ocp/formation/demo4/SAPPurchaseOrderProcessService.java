@@ -7,4 +7,10 @@ public class SAPPurchaseOrderProcessService implements PurchaseOrderProcessServi
 	public void sendOrderToProcess(OrderProduct aspirineOrder) {
 		System.out.println("Call SAP to Order:" + aspirineOrder);
 	}
+
+	@Override
+	public int getQuantity(OrderProduct orderProduct) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

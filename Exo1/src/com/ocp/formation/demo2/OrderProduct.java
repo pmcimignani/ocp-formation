@@ -1,9 +1,11 @@
 package com.ocp.formation.demo2;
 
 public class OrderProduct {
-	int quantity;
-	double price;
-	Product product;
+	private int quantity;
+	private double price;
+	private Product product;
+	
+	
 	public int getQuantity() {
 		return quantity;
 	}
@@ -24,8 +26,7 @@ public class OrderProduct {
 	}
 	@Override
 	public String toString() {
-		return "Order2 [quantity=" + quantity + ", price=" + price + ", product=" + product + "]";
+		return "OrderProduct [quantity=" + quantity + ", price=" + price + ", product=" + product + "]";
 	}
-	
-	
+
 }

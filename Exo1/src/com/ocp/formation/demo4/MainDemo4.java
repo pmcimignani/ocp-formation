@@ -9,7 +9,7 @@ public class MainDemo4 {
 		// Create Aspirine instance
 		Product aspirine = new Product();
 		aspirine.setLibelle("Aspririne");
-		aspirine.setRef("Ref-A");
+		aspirine.setRef(333);
 		// Create Order
 		OrderProduct aspirineOrder = new OrderProduct();
 		aspirineOrder.setPrice(2.5);

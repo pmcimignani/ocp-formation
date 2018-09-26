@@ -3,17 +3,20 @@ package com.ocp.formation.demo2;
 public class MainDemo2 {
 
 	public static void main(String[] args) {
-		//Create Aspirine instance
-		Product aspirine = new Product();
-		aspirine.setLibelle("Aspririne");
-		aspirine.setRef("Ref-A");
-		//Create Order
-		OrderProduct aspirineOrder = new OrderProduct();
-		aspirineOrder.setPrice(2.5);
-		aspirineOrder.setQuantity(15);
-		aspirineOrder.setProduct(aspirine);
+		Product viagra = new Product();
+		viagra.setLibelle("Viagra Pour Abdel");
+		viagra.setRef(434343434);
 		
-		System.out.println(aspirineOrder);
+		Product viagra2 = new Product();
+		viagra.setLibelle("Viagra Pour Abdel");
+		viagra.setRef(434343434);
+		
+		OrderProduct viagraCommande = new OrderProduct();
+		viagraCommande.setProduct(viagra);
+		viagraCommande.setQuantity(1000);
+		viagraCommande.setPrice(1);
+		System.out.println(viagraCommande);
+
 	}
 
 }
