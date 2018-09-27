@@ -1,5 +1,7 @@
 package fr.ocp.formation.service;
 
+import javax.jws.WebService;
+
 import fr.ocp.formation.data.POInput;
 import fr.ocp.formation.data.POOutput;
 
@@ -9,6 +11,7 @@ import fr.ocp.formation.data.POOutput;
  * @author pmc
  *
  */
+@WebService
 public interface POService {
 
 	/**

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://service.formation.ocp.fr/" name="PEService" targetNamespace="http://service.formation.ocp.fr/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.formation.ocp.fr/" elementFormDefault="unqualified" targetNamespace="http://service.formation.ocp.fr/" version="1.0">
+
+  <xs:element name="getQuantity" type="tns:getQuantity"/>
+
+  <xs:element name="getQuantityResponse" type="tns:getQuantityResponse"/>
+
+  <xs:complexType name="getQuantity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:peInput"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="peInput">
+    <xs:sequence>
+      <xs:element name="idProduct" type="xs:int"/>
+      <xs:element name="quantity" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getQuantityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:peOutput"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="peOutput">
+    <xs:sequence>
+      <xs:element name="quantity" type="xs:int"/>
+      <xs:element name="returnCode" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getQuantityResponse">
+    <wsdl:part element="ns1:getQuantityResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuantity">
+    <wsdl:part element="ns1:getQuantity" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PEService">
+    <wsdl:operation name="getQuantity">
+      <wsdl:input message="ns1:getQuantity" name="getQuantity">
+    </wsdl:input>
+      <wsdl:output message="ns1:getQuantityResponse" name="getQuantityResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

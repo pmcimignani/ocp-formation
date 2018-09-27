@@ -36,4 +36,9 @@ public class PEInput {
 		this.quantity = quantity;
 	}
 
+	@Override
+	public String toString() {
+		return "PEInput [idProduct=" + idProduct + ", quantity=" + quantity + "]";
+	}
+
 }

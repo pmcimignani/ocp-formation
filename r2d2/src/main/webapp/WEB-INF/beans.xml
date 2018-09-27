@@ -8,7 +8,10 @@
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 
-	<jaxws:endpoint id="order"
-		implementor="fr.ocp.formation.service.logic.PEServiceLogic" address="/Order" />
+	<jaxws:endpoint id="pe"
+		implementor="fr.ocp.formation.service.logic.PEServiceLogic" address="/pe" />
+		
+<jaxws:endpoint id="po"
+		implementor="fr.ocp.formation.service.logic.POServiceLogic" address="/po" />
 
 </beans>

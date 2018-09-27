@@ -8,6 +8,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>r2d2 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4jVersion>1.6.1</slf4jVersion>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -15,8 +20,6 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
@@ -40,8 +43,29 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4jVersion}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4jVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>r2d2</finalName>
+
+
 	</build>
 </project>
