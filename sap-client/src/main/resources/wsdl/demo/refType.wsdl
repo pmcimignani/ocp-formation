@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://service.serialisation.formation.ocp.fr/" name="RefProduct" targetNamespace="http://service.serialisation.formation.ocp.fr/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.serialisation.formation.ocp.fr/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.serialisation.formation.ocp.fr/">
+  <xs:element name="addProduct" type="tns:addProduct"/>
+  <xs:element name="addProductResponse" type="tns:addProductResponse"/>
+  <xs:element name="getAll" type="tns:getAll"/>
+  <xs:element name="getAllResponse" type="tns:getAllResponse"/>
+  <xs:element name="getRef" type="tns:getRef"/>
+  <xs:element name="getRefResponse" type="tns:getRefResponse"/>
+  <xs:element name="unReference" type="tns:unReference"/>
+  <xs:element name="unReferenceResponse" type="tns:unReferenceResponse"/>
+  <xs:element name="updateProduct" type="tns:updateProduct"/>
+  <xs:element name="updateProductResponse" type="tns:updateProductResponse"/>
+  <xs:complexType name="addProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="libelle" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addProductResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:refRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="refRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idProduct" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRefResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateProductResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAll">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getAllResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:refRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unReferenceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlreadyExistProductException" type="tns:AlreadyExistProductException"/>
+  <xs:complexType name="AlreadyExistProductException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnknownProductException" type="tns:UnknownProductException"/>
+  <xs:complexType name="UnknownProductException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="unReferenceResponse">
+    <wsdl:part element="ns1:unReferenceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateProductResponse">
+    <wsdl:part element="ns1:updateProductResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UnknownProductException">
+    <wsdl:part element="ns1:UnknownProductException" name="UnknownProductException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addProductResponse">
+    <wsdl:part element="ns1:addProductResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addProduct">
+    <wsdl:part element="ns1:addProduct" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRef">
+    <wsdl:part element="ns1:getRef" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateProduct">
+    <wsdl:part element="ns1:updateProduct" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllResponse">
+    <wsdl:part element="ns1:getAllResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AlreadyExistProductException">
+    <wsdl:part element="ns1:AlreadyExistProductException" name="AlreadyExistProductException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRefResponse">
+    <wsdl:part element="ns1:getRefResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAll">
+    <wsdl:part element="ns1:getAll" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unReference">
+    <wsdl:part element="ns1:unReference" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RefProduct">
+    <wsdl:operation name="addProduct">
+      <wsdl:input message="ns1:addProduct" name="addProduct">
+    </wsdl:input>
+      <wsdl:output message="ns1:addProductResponse" name="addProductResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:AlreadyExistProductException" name="AlreadyExistProductException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRef">
+      <wsdl:input message="ns1:getRef" name="getRef">
+    </wsdl:input>
+      <wsdl:output message="ns1:getRefResponse" name="getRefResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:UnknownProductException" name="UnknownProductException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input message="ns1:updateProduct" name="updateProduct">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateProductResponse" name="updateProductResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:UnknownProductException" name="UnknownProductException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAll">
+      <wsdl:input message="ns1:getAll" name="getAll">
+    </wsdl:input>
+      <wsdl:output message="ns1:getAllResponse" name="getAllResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unReference">
+      <wsdl:input message="ns1:unReference" name="unReference">
+    </wsdl:input>
+      <wsdl:output message="ns1:unReferenceResponse" name="unReferenceResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:UnknownProductException" name="UnknownProductException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
