@@ -1,11 +1,8 @@
 package com.ocp.cxf.rs;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import javax.jws.WebParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,19 +14,26 @@ import javax.ws.rs.core.Response;
 
 @Path("/orders")
 public class OrderService {
+	final Map<String, OrderProduct> orders;
+
+	public OrderService() {
+		orders = new HashMap<String, OrderProduct>();
+		OrderProduct op = new OrderProduct();
+		op.setOrderId("1");
+		op.setDetails("Details of the product ");
+		OrderProduct op2 = new OrderProduct();
+		op2.setOrderId("3");
+		op2.setDetails("Details of the product ");
+
+		orders.put("1", op);
+		orders.put("2", op);
+
+	}
 
 	@GET
 	@Path("/")
 	@Produces("application/json")
 	public Response getOrders() {
-
-		OrderProduct op = new OrderProduct();
-		op.setOrderId("1");
-		op.setDetails("Details of the product ");
-
-		List<OrderProduct> orders = new ArrayList<OrderProduct>();
-		orders.add(op);
-
 		return Response.ok().entity(orders).build();
 	}
 
@@ -38,10 +42,8 @@ public class OrderService {
 	@Produces("application/json")
 	public Response getOrderById(@PathParam("id") String orderId) {
 		// Simuler une creation d'object
-		OrderProduct op = new OrderProduct();
-		op.setOrderId(orderId);
-		op.setDetails("Details of the product with id  = " + orderId);
-		return Response.ok().entity(op).build();
+
+		return Response.ok().entity(orders.get(orderId)).build();
 	}
 
 	@GET
@@ -50,7 +52,7 @@ public class OrderService {
 	public Response ben(@PathParam("age") String age, @PathParam("sexe") String sexe) {
 		// Simuler une creation d'object
 		Map map = new HashMap();
-		map.put("benji", "is cool, sexe= "+sexe+", age="+age);
+		map.put("benji", "is cool, sexe= " + sexe + ", age=" + age);
 		return Response.ok().entity(map).build();
 	}
 
