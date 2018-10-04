@@ -13,6 +13,12 @@
 		<jackson.version>1.8.6</jackson.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>fr.ocp.legacy.formation</groupId>
+			<artifactId>sap-client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
